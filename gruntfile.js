@@ -64,7 +64,7 @@ module.exports = function(grunt) {
           tasks: ['cssmin']
       },
       imageopti: {
-          files: ['app/images/*.*'],
+          files: ['app/images/*'],
           tasks: ['imagemin']
      }
     }
