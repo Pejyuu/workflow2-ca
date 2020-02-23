@@ -1,0 +1,283 @@
+html  { }
+body  {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: #2b2e34;
+  position: relative;
+  }
+
+/* MODIFIERS */
+.is-left  { float: left; }
+.is-right { float: right; }
+.is-button {
+  background-color: #aeec61;
+  border-radius: 5px;
+  color: #4c594c;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1.2em;
+  text-align: center;
+  display: inline-block;
+  padding: 0.3em 0;
+  }
+  .is-button:hover { color: #fff; }
+
+
+.is-accent { color: #5f872d; }
+
+.is-fullwidth { width: 100%; }
+
+.has-columns {
+  display: flex;
+  flex-direction: column;
+  }
+
+.inner-columns  {
+  display: flex;
+  flex-direction: column;
+  }
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Oswald', sans-serif;
+  color: #5f872d;
+  }
+
+a {
+  color: #5f872d;
+  text-decoration: none;
+  }
+  a:hover { color: #ffffff; }
+
+
+/* Header and NAV */
+header {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  }
+  nav {
+    background-color: #2b2e34;
+    margin: 0 auto;
+    padding: 0.5em;
+    }
+
+
+/* MENU TOGGLER */
+#menuToggler  { color: #fff; } /* Sets color to burger-menu */
+  /* Makes Default state of #menu 'hidden' */
+  #menu {
+    position: fixed;
+    left: -9999px;
+    }
+  #menu a {
+      color: #aeec61;
+      text-decoration: none;
+      }
+  #menu a:hover { color: #ffffff; }
+  /* Checkbox */
+  input[type=checkbox] { display: none; }   /* Hides Checkbox Toggler */
+  input[type=checkbox]:checked ~ #menu {    /* Shows Menu when checkbox is checked */
+    position: relative;
+    left: 0;
+    }
+  #menu a.is-active { color: #d6edba; }
+
+  @media only screen and (min-width: 1020px) {
+    #menuToggler { display: none; } /* Hides Burger when screensize is larger. */
+  }
+
+/* MENU */
+#menu {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    color: #fff;
+    }
+    #menu li { list-style: none; }
+
+/* FOOTER */
+footer  {
+  background-color: #f2f4ef;
+  width: 90%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  }
+  footer p {
+    padding: 2em;
+    margin: 2em 0 0 0;
+    }
+
+#feature {
+  background: url('images/citybikes.jpg') no-repeat center center;
+  background-size: cover;
+  width: 90%;
+  height: 300px;
+  margin: 1em auto 3em auto;
+  }
+
+#content {
+  width: 90%;
+  margin: 0 auto;
+  }
+  #content div .card {
+    width: 100%;
+    text-align: justify;
+    box-sizing: border-box;
+    padding: 0 1em 1em 1em;
+    }
+    #content div .card:first-of-type {
+      padding-left: 0;
+      }
+    #content div .card h3 {
+      font-size: 1.5em;
+      margin-top: 0;
+      }
+    #content div .card .is-icon {
+      color: #354d11;
+      font-size: 5em;
+      float: left;
+      padding: 0 0.5em 0.3em 0;
+      }
+      #content .to-tours {
+        width: 100%;
+        margin: 0 1em 1em 0;
+        }
+      #content.about .card { padding: 1em 0 1em 0; }
+
+    #content aside iframe{ width: 100%; height: 500px; }
+
+#content.contact .info { width: 100%; }
+#content.contact .form { width: 100%; }
+  #content.contact .form fieldset {
+    border: 0;
+    padding: 0;
+    }
+  #content.contact .form label { position:fixed; left: -9999px; }
+  #content.contact .form input, #content.contact .form textarea {
+    display: block;
+    width: 100%;
+    box-sizing:  border-box;
+    border: 2px solid #abadaa;
+    border-radius: 5px;
+    padding: 0.7em;
+    font-size: 1em;
+    color: #5f872d;
+    font-weight: 700;
+    margin-bottom: 1em;
+    }
+    #content.contact .form textarea {
+      height: 200px;
+      font-weight: 700;
+      }
+    /* Placeholder text :D */
+    input::placeholder, textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #abadaa;
+      opacity: 1; /* Firefox */
+      }
+    input:-ms-input-placeholder, textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: #abadaa;
+      }
+    input::-ms-input-placeholder, textarea::-ms-input-placeholder { /* Microsoft Edge */
+      color: #abadaa;
+      }
+    button {
+      border: 0;
+      width: 100%;
+      }
+
+    /* Change color when input and textarea are in focus */
+    #content.contact .form input:focus, #content.contact .form textarea:focus {
+      border-color: #5f872d;
+    }
+
+/* CONTACT INFO */
+
+
+
+/* TOURS */
+#tours { }
+#tours article {
+  margin: 0 1em 4em 0;
+  display: grid;
+  grid-template-columns: 60% 20% 20%;
+  }
+
+#tours.selected article { margin: 0 0 2em 0; }
+#tours article div { text-align: right; font-weight: 700; }
+  #tours article div.description { font-weight: 400; }
+  #tours article div.description, #tours article a.is-button {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin-top: 0.7em;
+    }
+  #tours article .tourname, #tours article .description { text-align: left; }
+  #tours .tourname h4 {
+    display: inline;
+    color: #2b2e34;
+    }
+
+/* TABLET / SMALL DESKTOP */
+@media only screen and (min-width: 1020px) {
+  .inner-columns {
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: auto;
+    }
+  .about .inner-columns {  /* Cancel flexbreak on about page */
+    flex-wrap: nowrap;
+    flex: auto;
+    }
+
+  #content div .card {
+    width: 100%
+    }
+
+
+  #content.about .card { padding: 1em; }
+  #content.about .card:last-of-type { padding-right: 0; }
+  #content.contact .info { width: 50%; }
+  #content.contact .form { width: 50%; }
+
+  #menu {
+    position: relative;
+    left:0;
+    text-align: left;
+    width: 50%;
+    margin: 0 auto;
+    padding: 0;
+    }
+    #menu li { display: inline-block; }
+      #menu li.headline {
+        font-family: 'Oswald', sans-serif;
+        float: right;
+        }
+      #menu li.headline h1 {
+        margin: 0;
+        padding: 0;
+      }
+      #menu li a {
+        font-size: 1.2em;
+        font-weight: 500;
+        }
+    /* Adds seperators to menu, removes from last item, and .headline */
+    #menu li::after {  content: "|"; margin: 0 10px; }
+    #menu li:last-of-type::after, ul#menu li.headline::after  { content: none; }
+
+} /* ENDS TABLER / SMALL DESKTOP */
+
+/* DESKTOP SIZE! */
+@media only screen and (min-width: 1260px) {
+  .has-columns {  flex-direction: row; }
+  footer {
+    width: 50%;
+    margin: 0 auto;
+    }
+
+  #feature { width: 50%;  }
+  #content { width: 50%;  }
+  #content div { width: 100%; }
+    #content div .card { width: 50% }
+
+}/* ENDS DESKTOP SIZE */
